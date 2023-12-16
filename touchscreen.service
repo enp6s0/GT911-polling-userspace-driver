@@ -1,0 +1,15 @@
+[Unit]
+Description=Userspace Touchscreen Driver
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/touchscreen/driver.py
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RestartSec=1
+User=root
+TimeoutStartSec=5
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target
